@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 module Api
   module V1
+    # Book API Resource
     class BooksController < ApplicationController
       def index
-        render json: Book.all
+        render json: BookSerializer.new(Book.includes(:author)).serializable_hash.to_json
       end
 
       def create

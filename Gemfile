@@ -9,6 +9,9 @@ gem 'rails', '~> 7.0.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 
+# Use JSON API Serializer for serialize [https://github.com/jsonapi-serializer/jsonapi-serializer]
+gem 'jsonapi-serializer'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 

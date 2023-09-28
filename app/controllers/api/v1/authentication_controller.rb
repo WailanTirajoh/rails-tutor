@@ -12,7 +12,7 @@ module Api
       def create
         raise AuthenticationError unless user.authenticate(params.require(:password))
 
-        token = AuthenticationTokenService.call(user.id)
+        token = AuthenticationTokenService.encode(user.id)
 
         render json: { token: }, status: :created
       end

@@ -12,6 +12,9 @@ gem 'sqlite3', '~> 1.4'
 # Use JSON API Serializer for serialize [https://github.com/jsonapi-serializer/jsonapi-serializer]
 gem 'jsonapi-serializer'
 
+# User JWT for json web token [https://github.com/jwt/ruby-jwt]
+gem 'jwt'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 

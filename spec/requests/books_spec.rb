@@ -29,7 +29,7 @@ describe 'Books API', type: :request do
         post '/api/v1/books', params: {
           book: { title: 'The Killa' },
           author: { first_name: 'Wailan', last_name: 'Tirajoh', age: 26 }
-        }
+        }, headers: { 'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.DiPWrOKsx3sPeVClrm_j07XNdSYHgBa3Qctosdxax3w' }
       end.to change { Book.count }.from(0).to(1)
 
       expect(response).to have_http_status(:created)

@@ -9,7 +9,10 @@ module Api
       before_action :authenticate_user, only: %i[create destroy]
 
       def index
-        render json: BookSerializer.new(Book.includes(:author)).serializable_hash.to_json
+        book = Book.ransack(params[:q])
+                   .result.includes(:author)
+
+        render json: BookSerializer.new(book)
       end
 
       def create
